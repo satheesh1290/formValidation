@@ -1,0 +1,20 @@
+<div class="container">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+       <tr *ngFor="let user of users; let id=index">
+             <td>{{id + 1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td> <a [routerLink]="['/update', id]" (click)="onUpdate(id)" style="text-decoration: none;">Update </a></td>
+            <td><a (click)="onDelete(id)" style="text-decoration: none;">Delete </a></td>
+        </tr>
+    </table>
+</div>
